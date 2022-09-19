@@ -24,9 +24,6 @@ jobs:
       - name: Install
         run: ./xc8_install.exe --mode "unattended" --LicenseType FreeMode --"Add to PATH" 0 ---prefix "C:\pic" --netservername "127.0.0.1"
 
-      - name: Dir
-        run: pwd && dir C:\pic\pic\ && dir C:\pic\pic\bin
-
       - name: Test make
         run: make --help
 
@@ -38,5 +35,6 @@ jobs:
         run: $Env:Path
 
       - name: Test install
+        shell: cmd
         run: xc8
 
