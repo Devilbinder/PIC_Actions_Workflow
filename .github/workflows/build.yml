@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Download XC8
+        shell: pwsh
         run: wget https://www.microchip.com/content/dam/mchp/documents/DEV/ProductDocuments/SoftwareTools/xc8-v2.32-full-install-windows-x64-installer.exe
 
       - name: info
