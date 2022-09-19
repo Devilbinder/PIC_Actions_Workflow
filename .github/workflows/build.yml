@@ -24,15 +24,13 @@ jobs:
       - name: Install
         run: ./xc8_install.exe --mode "unattended" --LicenseType FreeMode --"Add to PATH" 0 ---prefix "C:\pic" --netservername "127.0.0.1"
 
-      - name: Test make
-        run: make --help
-
       - name: Add to Path
         shell: bash
         run: echo "C:\pic\pic\bin" >> $GITHUB_PATH
 
       - name: Path
-        run: $Env:Path
+        shell: cmd
+        run: echo %PATH%
 
       - name: Test install
         shell: cmd
