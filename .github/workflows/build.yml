@@ -16,8 +16,8 @@ jobs:
 
       - name: Download XC8
         shell: pwsh
-        run: wget https://www.microchip.com/content/dam/mchp/documents/DEV/ProductDocuments/SoftwareTools/xc8-v2.32-full-install-windows-x64-installer.exe
+        run: Invoke-WebRequest -Uri https://www.microchip.com/content/dam/mchp/documents/DEV/ProductDocuments/SoftwareTools/xc8-v2.32-full-install-windows-x64-installer.exe -OutFile xc8.exe
 
       - name: info
-        run: ./xc8-v2.32-full-install-windows-x64-installer.exe --help
+        run: ./xc8.exe --help
 
