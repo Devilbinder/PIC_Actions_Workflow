@@ -31,7 +31,8 @@ jobs:
         run: make --help
 
       - name: Add to Path
-        run: echo "C:\pic\pic\bin" >> $GITHUB_ENV
+        shell: bash
+        run: echo "C:\pic\pic\bin" >> $GITHUB_PATH
 
       - name: Path
         run: $Env:Path
