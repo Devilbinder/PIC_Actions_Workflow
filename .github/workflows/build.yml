@@ -26,7 +26,11 @@ jobs:
 
       - name: List dir
         shell: bash
-        run: ls "C:\pic\pic\bin"
+        run: ls C:\pic\pic\bin
+
+      - name: List dir 2
+        shell: bash
+        run: ls C:\pic\pic\
 
       - name: Add to Path
         shell: bash
