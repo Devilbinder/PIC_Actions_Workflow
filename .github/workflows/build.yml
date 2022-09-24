@@ -22,7 +22,7 @@ jobs:
         run: ./xc8_install.exe --help
       
       - name: Install
-        run: ./xc8_install.exe --mode "unattended" --LicenseType FreeMode --prefix "C:\pic" --netservername "127.0.0.1" --unattendedmodeui minimal --debuglevel 0
+        run: ./xc8_install.exe --mode "win32" --LicenseType FreeMode --prefix "C:\pic" --netservername "127.0.0.1" --unattendedmodeui minimal --debuglevel 0
 
       - name: List dir
         shell: bash
