@@ -19,7 +19,8 @@ jobs:
         run: Invoke-WebRequest -Uri https://www.microchip.com/content/dam/mchp/documents/DEV/ProductDocuments/SoftwareTools/xc8-v2.32-full-install-windows-x64-installer.exe -OutFile xc8_install.exe
 
       - name: Install
-        run: runas /user:Administrator "./xc8_install.exe --mode "unattended" --LicenseType FreeMode --"Add to PATH" 0 ---prefix "C:\pic" --netservername "127.0.0.1""
+        shell: cmd
+        run: runas /user:Administrator "./xc8_install.exe --mode 'unattended' --LicenseType FreeMode --'Add to PATH' 0 ---prefix 'C:\pic' --netservername '127.0.0.1'"
 
       - name: List dir
         shell: bash
