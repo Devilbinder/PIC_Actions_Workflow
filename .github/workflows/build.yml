@@ -13,10 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: List dir 3
-        shell: bash
-        run: ls C:/Windows
         
       - name: Download XC8
         shell: pwsh
@@ -26,7 +22,7 @@ jobs:
         run: ./xc8_install.exe --help
       
       - name: Install
-        run: ./xc8_install.exe --mode "unattended" --LicenseType FreeMode --prefix "C:\pic" --netservername "127.0.0.1" --unattendedmodeui minimalWithDialogs
+        run: ./xc8_install.exe --mode "unattended" --LicenseType FreeMode --prefix "C:\pic" --netservername "127.0.0.1" --unattendedmodeui minimal --debuglevel 4
 
       - name: List dir
         shell: bash
