@@ -24,7 +24,7 @@ jobs:
 
       - name: Install
         shell: cmd
-        run: ./xc8_install.exe --mode 'unattended' --LicenseType FreeMode --'Add to PATH' 0 ---prefix 'C:\pic' --netservername '127.0.0.1'
+        run: ./xc8_install.exe --mode "unattended" --LicenseType FreeMode --prefix "C:\pic" --netservername "127.0.0.1"
 
       - name: List dir
         shell: bash
