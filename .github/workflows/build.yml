@@ -14,13 +14,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: List dir 3
+        shell: bash
+        run: ls C:/Windows
+        
       - name: Download XC8
         shell: pwsh
         run: Invoke-WebRequest -Uri https://www.microchip.com/content/dam/mchp/documents/DEV/ProductDocuments/SoftwareTools/xc8-v2.32-full-install-windows-x64-installer.exe -OutFile xc8_install.exe
 
       - name: Install
         shell: cmd
-        run: runas /user:Administrator "./xc8_install.exe --mode 'unattended' --LicenseType FreeMode --'Add to PATH' 0 ---prefix 'C:\pic' --netservername '127.0.0.1'"
+        run: ./xc8_install.exe --mode 'unattended' --LicenseType FreeMode --'Add to PATH' 0 ---prefix 'C:\pic' --netservername '127.0.0.1'
 
       - name: List dir
         shell: bash
@@ -28,7 +32,8 @@ jobs:
 
       - name: List dir 2
         shell: bash
-        run: ls C:/pic/pic
+        run: ls C:/pic/
+
 
       - name: Add to Path
         shell: bash
@@ -40,5 +45,5 @@ jobs:
 
       - name: Test install
         shell: cmd
-        run: xc8.exe
+        run: xc8
 
